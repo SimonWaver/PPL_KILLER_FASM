@@ -23,9 +23,7 @@ proc DriverEntry DriverObject, RegistryPath
 	RET
 endp
 
-proc RESOLVE_ALL
-	SUB 	RSP, 28H
-	
+proc RESOLVE_FUNCTION
 	LEA 	RCX, [u_PsLookupProcessByProcessId]
 	CALL 	[MmGetSystemRoutineAddress]
 	MOV 	[a_PsLookupProcessByProcessId], RAX
@@ -49,8 +47,6 @@ proc RESOLVE_ALL
 	LEA 	RCX, [u_ZwTerminateProcess]
 	CALL 	[MmGetSystemRoutineAddress]
 	MOV 	[a_ZwTerminateProcess], RAX
-
-	ADD 	RSP, 28H
 	RET
 endp
 
