@@ -4,9 +4,9 @@ include 'win64a.inc'
 include 'data.inc'
 
 struct UNICODE_STRING
-  Length        dw ?
+  Length dw ?
   MaximumLength dw ?
-  Buffer        dq ?
+  Buffer dq ?
 ends
 
 CODE
