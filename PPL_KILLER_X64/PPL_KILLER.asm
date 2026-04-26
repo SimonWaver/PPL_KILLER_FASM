@@ -1,6 +1,6 @@
 format PE64 native
 entry DriverEntry
-include 'C:\FASM\INCLUDE\win64a.inc'
+include 'win64a.inc'
 include 'data.inc'
 
 CODE
